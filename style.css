@@ -1,0 +1,152 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   padding: 20px;
+   background: linear-gradient(135deg, #000 0%, #9d36f7 100%);
+   min-height: 100vh;
+   color: white;
+}
+
+h1 {
+   text-align: center;
+   margin-bottom: 30px;
+   font-size: 2.5em;
+}
+
+.search-zone {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   margin-bottom: 30px;
+}
+
+#artist-input {
+   padding: 12px 20px;
+   font-size: 16px;
+   border: none;
+   border-radius: 25px;
+   width: 300px;
+   outline: none;
+}
+
+.bouton {
+   padding: 12px 30px;
+   font-size: 16px;
+   border: none;
+   border-radius: 25px;
+   background: white;
+   color: black;
+   cursor: pointer;
+   font-weight: bold;
+   transition: all 0.3s;
+}
+
+.bouton:hover {
+   background: #f0f0f0;
+   transform: scale(1.05);
+}
+
+#results-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   gap: 20px;
+   padding: 20px;
+}
+
+.track-card {
+   background: white;
+   color: #333;
+   border-radius: 15px;
+   padding: 15px;
+   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+   transition: transform 0.3s;
+   cursor: pointer;
+}
+
+.track-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.track-card img {
+   width: 100%;
+   border-radius: 10px;
+   margin-bottom: 10px;
+}
+
+.cover-container {
+   position: relative;
+   margin-bottom: 10px;
+   overflow: hidden;
+   border-radius: 10px;
+}
+
+.cover-image {
+   width: 100%;
+   display: block;
+   border-radius: 10px;
+   transition: filter 0.3s;
+}
+
+.play-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+
+.track-card:hover .play-overlay {
+   opacity: 1;
+}
+
+.play-icon {
+   font-size: 3em;
+   color: white;
+   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.track-card.playing .cover-image {
+   filter: brightness(0.7);
+}
+
+.track-card.playing .play-overlay {
+   opacity: 1;
+   background: rgba(157, 54, 247, 0.7);
+}
+
+.track-card.playing .play-icon {
+   font-size: 0;
+}
+
+.track-card.playing .play-icon::before {
+   content: "⏸";
+   font-size: 3rem;
+}
+
+.track-card h3 {
+   font-size: 1.1em;
+   margin-bottom: 5px;
+}
+
+.track-card p {
+   font-size: 0.9em;
+   color: #666;
+   margin: 3px 0;
+}
+
+.jaune {
+   background: yellow !important;
+   color: black !important;
+}
